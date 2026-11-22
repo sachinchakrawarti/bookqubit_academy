@@ -1,0 +1,167 @@
+/* src/app/programming/javascript/javascript.css */
+
+/* --- Layout --- */
+.article-layout {
+  display: flex;
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 40px 24px;
+  gap: 40px;
+  align-items: flex-start;
+}
+
+/* --- Sidebar --- */
+.article-sidebar {
+  width: 250px;
+  flex-shrink: 0;
+  position: sticky;
+  top: 120px; /* Stays in view while scrolling */
+  background: var(--theme-bg-surface);
+  border: 1px solid var(--theme-border);
+  border-radius: var(--theme-radius-container, 12px);
+  padding: 20px 0;
+}
+
+.sidebar-title {
+  font-size: 16px;
+  font-weight: 700;
+  color: var(--theme-text);
+  padding: 0 20px 12px;
+  margin: 0;
+  border-bottom: 1px solid var(--theme-border);
+}
+
+.sidebar-nav {
+  display: flex;
+  flex-direction: column;
+  margin-top: 12px;
+}
+
+.sidebar-link {
+  padding: 10px 20px;
+  font-size: 14px;
+  color: var(--theme-muted);
+  text-decoration: none;
+  border-left: 3px solid transparent;
+  transition: all 0.15s ease;
+}
+
+.sidebar-link:hover,
+.sidebar-link.active {
+  background: var(--theme-bg-subtle);
+  color: var(--theme-primary);
+  border-left-color: var(--theme-primary);
+}
+
+/* --- Main Content --- */
+.article-content {
+  flex: 1;
+  min-width: 0; /* Prevents code blocks from stretching the layout */
+  background: var(--theme-bg-surface);
+  border: 1px solid var(--theme-border);
+  border-radius: var(--theme-radius-container, 12px);
+  padding: 40px;
+  box-shadow: var(--theme-shadow-container);
+}
+
+.article-tag {
+  display: inline-block;
+  padding: 4px 10px;
+  border-radius: 999px;
+  font-size: 12px;
+  font-weight: 700;
+  text-transform: uppercase;
+  background: var(--theme-bg-subtle);
+  color: var(--theme-primary);
+  margin-bottom: 16px;
+}
+
+.article-title {
+  font-size: 2.5rem;
+  font-weight: 800;
+  color: var(--theme-text);
+  margin: 0 0 16px;
+  letter-spacing: -0.02em;
+}
+
+.article-desc {
+  font-size: 1.15rem;
+  line-height: 1.6;
+  color: var(--theme-muted);
+  margin: 0 0 32px;
+}
+
+.article-divider {
+  border: none;
+  border-top: 1px solid var(--theme-border);
+  margin: 32px 0;
+}
+
+/* --- Sections --- */
+.article-section {
+  margin-bottom: 48px;
+  scroll-margin-top: 120px; /* Fixes anchor scroll overlap */
+}
+
+.article-section h2 {
+  font-size: 1.75rem;
+  font-weight: 700;
+  color: var(--theme-text);
+  margin: 0 0 16px;
+}
+
+.article-section p {
+  font-size: 16px;
+  line-height: 1.7;
+  color: var(--theme-muted);
+  margin: 0 0 20px;
+}
+
+.article-section code {
+  background: var(--theme-bg-subtle);
+  padding: 2px 6px;
+  border-radius: 4px;
+  font-family: monospace;
+  color: var(--theme-primary);
+  font-size: 0.9em;
+}
+
+/* --- Code Blocks --- */
+.code-block {
+  background: #1e1e1e; /* Keep code editor dark for contrast */
+  border-radius: 8px;
+  overflow: hidden;
+  border: 1px solid #333;
+  margin-top: 16px;
+}
+
+.code-header {
+  background: #2d2d2d;
+  padding: 8px 16px;
+  font-size: 12px;
+  font-weight: 600;
+  color: #a0a0a0;
+  border-bottom: 1px solid #333;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.code-block pre {
+  margin: 0;
+  padding: 20px;
+  overflow-x: auto;
+}
+
+.code-block code {
+  font-family: 'Fira Code', 'Consolas', monospace;
+  font-size: 14px;
+  color: #d4d4d4;
+  line-height: 1.5;
+  background: transparent;
+  padding: 0;
+}
+
+/* Syntax Highlighting (Basic) */
+.code-block code {
+  color: #d4d4d4;
+}

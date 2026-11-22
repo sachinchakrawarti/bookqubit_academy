@@ -1,0 +1,27 @@
+/* src/layout/navbar/navbar.css */
+
+/* ============================================================
+   Navbar visibility switch
+   - Mobile (< 768px):  mobile navbar only
+   - Desktop (>= 768px): desktop navbar only
+   ============================================================ */
+
+/* Mobile-first defaults */
+.navbar-show-desktop {
+  display: none;
+}
+
+.navbar-show-mobile {
+  display: block;
+}
+
+/* Desktop breakpoint */
+@media (min-width: 768px) {
+  .navbar-show-desktop {
+    display: block;
+  }
+
+  .navbar-show-mobile {
+    display: none;
+  }
+}

@@ -1,0 +1,183 @@
+/* src/app/globals.css */
+
+/* =========================================
+   1. Strict Reset (0 Margin & 0 Padding)
+   ========================================= */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html,
+body {
+  width: 100%;
+  min-height: 100vh;
+  /* Prevent horizontal scroll from 100vw elements */
+  overflow-x: hidden;
+}
+
+html {
+  -webkit-text-size-adjust: 100%;
+  text-size-adjust: 100%;
+  /* Smooth transition when switching themes */
+  transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+/* =========================================
+   2. Theme-Driven Base Body Styles
+   ========================================= */
+body {
+  /* Uses the variables injected by ThemeProvider */
+  background: var(--theme-bg, #ffffff);
+  background-image: var(--theme-bg-gradient, none);
+  background-attachment: fixed;
+  color: var(--theme-text, #0f172a);
+  
+  /* Typography */
+  font-family: ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto,
+    "Helvetica Neue", Arial, sans-serif;
+  font-size: 16px;
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  
+  transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+/* =========================================
+   3. Media & Element Defaults
+   ========================================= */
+img,
+svg,
+video,
+canvas,
+picture,
+iframe {
+  display: block;
+  max-width: 100%;
+  height: auto; 
+}
+
+button,
+input,
+select,
+textarea {
+  font: inherit;
+  color: inherit;
+  border: none;
+  background: transparent;
+}
+
+button {
+  cursor: pointer;
+  outline: none;
+}
+
+a {
+  color: var(--theme-primary, #0284c7);
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+/* Prevent global link underlines from ruining buttons/nav */
+.navbar-desktop a,
+.navbar-desktop a:hover,
+a.navbar-signup,
+a.navbar-login,
+a.navbar-brand {
+  text-decoration: none;
+}
+
+/* =========================================
+   4. Typography Base
+   ========================================= */
+h1, h2, h3, h4, h5, h6 {
+  margin-bottom: 0.5em;
+  font-weight: 600;
+  line-height: 1.25;
+  color: var(--theme-text, #0f172a);
+}
+
+p {
+  margin-bottom: 1em;
+}
+
+code,
+pre,
+kbd,
+samp {
+  font-family: ui-monospace, SFMono-Regular, Menlo, Consolas,
+    "Liberation Mono", monospace;
+  font-size: 0.9em;
+}
+
+pre {
+  overflow-x: auto;
+  padding: 16px;
+  border-radius: var(--theme-radius-container, 8px);
+  background: var(--theme-bg-subtle, #f8fafc);
+  border: 1px solid var(--theme-border, #e2e8f0);
+  box-shadow: var(--theme-ring-effect);
+}
+
+/* =========================================
+   5. Selection & Focus States
+   ========================================= */
+::selection {
+  background: var(--theme-primary, #0284c7);
+  color: var(--theme-btn-primary-text, #ffffff);
+}
+
+:focus-visible {
+  outline: 2px solid var(--theme-primary, #0284c7);
+  outline-offset: 2px;
+}
+
+/* =========================================
+   6. Scrollbar Styling
+   ========================================= */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: var(--theme-border-strong, #cbd5e1) transparent;
+}
+
+*::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+*::-webkit-scrollbar-thumb {
+  background: var(--theme-border-strong, #cbd5e1);
+  border-radius: 999px;
+}
+
+*::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+/* =========================================
+   7. Utility / Layout Classes
+   ========================================= */
+.app-container {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  width: 100%;
+}
+
+/* Example of how to build a theme-aware card using the variables */
+.theme-card {
+  background: var(--theme-bg-surface, #ffffff);
+  color: var(--theme-text, #0f172a);
+  border: 1px solid var(--theme-border, #e2e8f0);
+  border-radius: var(--theme-radius-container, 12px);
+  box-shadow: var(--theme-shadow-container);
+  padding: 24px;
+  transition: all 0.2s ease;
+}
